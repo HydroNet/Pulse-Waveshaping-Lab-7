@@ -1,0 +1,334 @@
+
+**** 04/27/22 23:06:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab7"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 7\lab7-pspicefiles\schematic1\lab7.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "lab7.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../lab7-pspicefiles/lab7.lib" 
+* From [PSPICE NETLIST] section of C:\Users\Harry\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 450us 0 1us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB7
+X_U1         N01109 N00473 N00189 N00198 N00485 LM741
+X_U2         N00859 N00522 N00214 N00207 N00512 LM741
+V_V1         N00189 0 10V
+V_V2         N00198 0 -10V
+V_V3         N00214 0 10V
+V_V4         N00207 0 -10V
+R_R1         N00473 N00485  1k TC=0,0 
+R_R2         N00522 N00512  1k TC=0,0 
+M_M1         N00859 N00834 N00485 0 Mbreakn           
+M_M2         N00773 N00834 0 0 Mbreakn           
+M_M3         N00859 N00773 N00485 N00766 Mbreakp           
+M_M4         N00773 N00834 N00908 N00766 Mbreakp           
+V_V5         N00908 0 5V
+C_C1         0 N00859  75pF  TC=0,0 
+V_V6         N00834 0  
++PULSE 5V 0 0 750n 750n 1.75u 2.5u
+R_R3         0 N00859  10MEG TC=0,0 
+V_V7         N01109 0  
++PULSE 0 5V 0 1.25u 1.25u 0 2.5u
+
+**** RESUMING lab7.cir ****
+.END
+
+**** 04/27/22 23:06:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab7"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 7\lab7-pspicefiles\schematic1\lab7.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.x_lm741.dx X_U1.x_lm741.dy X_U2.x_lm741.dx X_U2.x_lm741.dy 
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+**** 04/27/22 23:06:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab7"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 7\lab7-pspicefiles\schematic1\lab7.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.x_lm741.qx X_U2.x_lm741.qx 
+               NPN             NPN             
+       LEVEL    1               1            
+          IS  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75         
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    0               0            
+         CJE    0               0            
+         VJE     .75             .75         
+         CJC    0               0            
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.42         
+           D     .87             .87         
+
+
+**** 04/27/22 23:06:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab7"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 7\lab7-pspicefiles\schematic1\lab7.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Mbreakn         Mbreakp         
+               NMOS            PMOS            
+       LEVEL    1               1            
+           L   10.000000E-06   10.000000E-06 
+           W   30.000000E-06   60.000000E-06 
+         VTO    2              -1.5          
+          KP  111.000000E-06   55.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA     .01             .04         
+          IS   16.640000E-12   16.640000E-12 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+         CBD    2.000000E-12    4.000000E-12 
+         CBS    2.000000E-12    4.000000E-12 
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO  100.000000E-15  200.000000E-15 
+        CGDO  100.000000E-15  200.000000E-15 
+        CGBO    0               0            
+         TOX    1.200000E-06    1.200000E-06 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for V_V6.
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for V_V6.
+
+**** 04/27/22 23:06:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab7"  [ C:\Users\Harry\Desktop\Spring 2022 CSUN\ECE 443L\Lab 7\lab7-pspicefiles\schematic1\lab7.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00189)   10.0000 (N00198)  -10.0000 (N00207)  -10.0000 (N00214)   10.0000     
+
+(N00473) 19.25E-06 (N00485) 99.02E-06 (N00512) 118.2E-06 (N00522) 38.48E-06     
+
+(N00766)    4.9589 (N00773) 21.62E-09 (N00834)    5.0000 (N00859) 19.23E-06     
+
+(N00908)    5.0000 (N01109)    0.0000 (X_U1.x_lm741.6)-11.89E-09                
+
+(X_U1.x_lm741.7) 107.0E-06            (X_U1.x_lm741.8) 107.0E-06                
+
+(X_U1.x_lm741.9)    0.0000            (X_U2.x_lm741.6)-12.63E-09                
+
+(X_U2.x_lm741.7) 122.2E-06            (X_U2.x_lm741.8) 122.2E-06                
+
+(X_U2.x_lm741.9)    0.0000            (X_U1.x_lm741.10)    -.6077               
+
+(X_U1.x_lm741.11)    9.9603           (X_U1.x_lm741.12)    9.9603               
+
+(X_U1.x_lm741.13)    -.5938           (X_U1.x_lm741.14)    -.5938               
+
+(X_U1.x_lm741.53)    9.0000           (X_U1.x_lm741.54)   -9.0000               
+
+(X_U1.x_lm741.90) 159.5E-06           (X_U1.x_lm741.91)   40.0000               
+
+(X_U1.x_lm741.92)  -40.0000           (X_U1.x_lm741.99)    0.0000               
+
+(X_U2.x_lm741.10)    -.6076           (X_U2.x_lm741.11)    9.9603               
+
+(X_U2.x_lm741.12)    9.9603           (X_U2.x_lm741.13)    -.5938               
+
+(X_U2.x_lm741.14)    -.5938           (X_U2.x_lm741.53)    9.0000               
+
+(X_U2.x_lm741.54)   -9.0000           (X_U2.x_lm741.90) 79.77E-06               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.116E-03
+    V_V2         1.116E-03
+    V_V3        -1.116E-03
+    V_V4         1.116E-03
+    V_V5        -6.480E-11
+    V_V6         0.000E+00
+    V_V7        -7.973E-08
+    X_U1.x_lm741.vb  -1.189E-13
+    X_U1.x_lm741.vc   9.001E-12
+    X_U1.x_lm741.ve   1.023E-11
+    X_U1.x_lm741.vlim   1.595E-07
+    X_U1.x_lm741.vlp  -4.000E-11
+    X_U1.x_lm741.vln  -4.000E-11
+    X_U2.x_lm741.vb  -1.263E-13
+    X_U2.x_lm741.vc   9.001E-12
+    X_U2.x_lm741.ve   1.023E-11
+    X_U2.x_lm741.vlim   7.977E-08
+    X_U2.x_lm741.vlp  -4.000E-11
+    X_U2.x_lm741.vln  -4.000E-11
+
+    TOTAL POWER DISSIPATION   4.47E-02  WATTS
+
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  205.0E-06.
+         Time step =  175.8E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N00834)                 =     5.000V  \         0V
+    V(N00773)                 =     4.993V  \     5.000V
+    V(X_U1.x_lm741.6)         =     25.33V  \  -205.30uV
+    V(X_U1.x_lm741.7)         =     27.85V  \     2.510V
+    V(X_U1.x_lm741.90)        =    506.71V  \   -4.257mV
+    V(X_U1.x_lm741.8)         =     27.85V  \     2.510V
+
+  These supply currents failed to converge:
+
+    I(X_U1.x_lm741.egnd)      =  -506.95mA  \    19.69uA
+    I(X_U2.x_lm741.egnd)      =   306.72nA  \   300.60nA
+    I(V_V1)                   =    -1.346A  \   -1.118mA
+    I(V_V2)                   =    -1.343A  \    1.115mA
+    I(V_V5)                   =    27.41KA  \  -459.24nA
+    I(V_V6)                   =   -78.76KA  \  -990.85fA
+    I(X_U1.x_lm741.vb)        =   253.34uA  \   -2.053nA
+    I(X_U1.x_lm741.vc)        =     1.344A  \    1.860uA
+    I(X_U1.x_lm741.ve)        =    -1.344A  \   -1.440uA
+    I(X_U1.x_lm741.vlim)      =   506.71mA  \   -4.257uA
+    I(X_U1.x_lm741.vlp)       =   466.71pA  \   -40.01pA
+    I(X_U1.x_lm741.vln)       =  -546.71pA  \   -40.00pA
+    I(X_U2.x_lm741.vc)        =    25.39nA  \    24.24nA
+    I(X_U2.x_lm741.ve)        =   -19.56nA  \   -18.85nA
+    I(X_U2.x_lm741.vlim)      =    38.99nA  \    38.64nA
+    I(X_U1.x_lm741.hlim)      =   -1.014nA  \    8.515fA
+
+  These devices failed to converge:
+    X_U1.x_lm741.dlp X_U2.x_lm741.dc X_U2.x_lm741.de X_U1.x_lm741.fb M_M1      
+    M_M2      M_M4      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00189)   10.0000 (N00198)  -10.0000 (N00207)  -10.0000 (N00214)   10.0000     
+
+(N00473)    2.5089 (N00485)    2.5091 (N00512)    2.4475 (N00522)    2.4474     
+
+(N00766)    7.0954 (N00773)    4.9932 (N00834)    5.0000 (N00859)    2.4464     
+
+(N00908)    5.0000 (N01109) 2.251E-09 (X_U1.x_lm741.6)   25.3340                
+
+(X_U1.x_lm741.7)   27.8450            (X_U1.x_lm741.8)   27.8450                
+
+(X_U1.x_lm741.9)    0.0000            (X_U2.x_lm741.6)-230.3E-06                
+
+(X_U2.x_lm741.7)    2.4475            (X_U2.x_lm741.8)    2.4475                
+
+(X_U2.x_lm741.9)    0.0000            (X_U1.x_lm741.10)    1.8688               
+
+(X_U1.x_lm741.11)    9.9193           (X_U1.x_lm741.12)   10.0000               
+
+(X_U1.x_lm741.13)    1.8969           (X_U1.x_lm741.14)    1.8688               
+
+(X_U1.x_lm741.53)    9.0000           (X_U1.x_lm741.54)   -9.0000               
+
+(X_U1.x_lm741.90)  506.7100           (X_U1.x_lm741.91)   40.0000               
+
+(X_U1.x_lm741.92)  -40.0000           (X_U1.x_lm741.99)    0.0000               
+
+(X_U2.x_lm741.10)    1.8387           (X_U2.x_lm741.11)    9.9594               
+
+(X_U2.x_lm741.12)    9.9604           (X_U2.x_lm741.13)    1.8530               
+
+(X_U2.x_lm741.14)    1.8526           (X_U2.x_lm741.53)    9.0000               
+
+(X_U2.x_lm741.54)   -9.0000           (X_U2.x_lm741.90) 38.99E-06               
+
+(X_U2.x_lm741.91)   40.0000           (X_U2.x_lm741.92)  -40.0000               
+
+(X_U2.x_lm741.99)    0.0000           
+
+
+**** Interrupt ****

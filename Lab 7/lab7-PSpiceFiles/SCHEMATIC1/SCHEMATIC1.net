@@ -1,0 +1,20 @@
+* source LAB7
+X_U1         N01109 N00473 N00189 N00198 N00485 LM741
+X_U2         N00859 N00522 N00214 N00207 N00512 LM741
+V_V1         N00189 0 10V
+V_V2         N00198 0 -10V
+V_V3         N00214 0 10V
+V_V4         N00207 0 -10V
+R_R1         N00473 N00485  50 TC=0,0 
+R_R2         N00522 N00512  50 TC=0,0 
+M_M1         N00859 N00834 N00485 0 Mbreakn           
+M_M2         N00773 N00834 0 0 Mbreakn           
+M_M3         N00859 N00773 N00485 N00766 Mbreakp           
+M_M4         N00773 N00834 N00908 N00766 Mbreakp           
+V_V5         N00908 0 5V
+C_C1         0 N00859  .01pf  TC=0,0 
+V_V6         N00834 0  
++PULSE 5V 0 0 1m 1m 1u 2.5u
+V_V7         N01109 0  
++PULSE 0 5V 0 1.25u 1.25u 0 2.5u
+R_R3         0 N00859  10k TC=0,0 
